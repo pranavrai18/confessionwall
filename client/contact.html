@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Anonymous Confession Wall</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <aside class="sidebar">
+        <div class="brand">
+          <p class="brand__title">Campus</p>
+          <p class="brand__subtitle">Safe Space</p>
+        </div>
+
+        <nav class="nav">
+          <a class="nav__link" href="index.html">Wall</a>
+          <a class="nav__link" href="about.html">About</a>
+          <a class="nav__link" href="guidelines.html">Guidelines</a>
+          <a class="nav__link" href="faq.html">FAQ</a>
+          <a class="nav__link nav__link--active" href="contact.html">Contact</a>
+        </nav>
+
+        <div class="sidebar__card">
+          Reports are reviewed with care. Do not include identifying details
+          unless you want a response.
+        </div>
+      </aside>
+
+      <main class="main main--content">
+        <section class="page-hero">
+          <p class="eyebrow">CONTACT</p>
+          <h1>Share feedback or report a concern</h1>
+          <p>
+            This form is for feedback, safety concerns, or questions about the
+            confession wall. You can stay anonymous if you prefer.
+          </p>
+        </section>
+
+        <form class="contact-form">
+          <label class="form__label" for="contactName">Name (optional)</label>
+          <input id="contactName" name="contactName" type="text" placeholder="Anonymous" />
+
+          <label class="form__label" for="contactEmail">Email (optional)</label>
+          <input id="contactEmail" name="contactEmail" type="email" placeholder="you@example.com" />
+
+          <label class="form__label" for="contactTopic">Topic</label>
+          <input id="contactTopic" name="contactTopic" type="text" placeholder="Report, feedback, or question" required />
+
+          <label class="form__label" for="contactMessage">Message</label>
+          <textarea id="contactMessage" name="contactMessage" rows="5" placeholder="Write your message..." required></textarea>
+
+          <button class="btn btn--dark" type="submit">Send message</button>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

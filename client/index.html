@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anonymous Confession Wall</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <aside class="sidebar">
+        <div class="brand">
+          <p class="brand__title">Campus Confession</p>
+          <p class="brand__subtitle">Safe Space</p>
+        </div>
+
+        <nav class="nav">
+          <a class="nav__link nav__link--active" href="index.html">Wall</a>
+          <a class="nav__link" href="about.html">About</a>
+          <a class="nav__link" href="guidelines.html">Guidelines</a>
+          <a class="nav__link" href="faq.html">FAQ</a>
+          <a class="nav__link" href="contact.html">Contact</a>
+        </nav>
+
+        <div class="profile">
+          <div class="profile__avatar"></div>
+          <div>
+            <p class="profile__name">Student #294</p>
+            <p class="profile__status">Online</p>
+          </div>
+        </div>
+
+        <div class="auth">
+          <button id="loginButton" class="btn btn--primary">Login with Google</button>
+          <button id="logoutButton" class="btn btn--ghost hidden">Logout</button>
+          <p id="loginStatus" class="auth__status">Not logged in</p>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <p class="stat__label">Total Confessions</p>
+            <p class="stat__value">4</p>
+          </div>
+          <div class="stat">
+            <p class="stat__label">Support Given</p>
+            <p class="stat__value">7</p>
+          </div>
+          <div class="stat">
+            <p class="stat__label">Campuses Online</p>
+            <p class="stat__value">12</p>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="welcome">
+          <div class="welcome__copy">
+            <p class="eyebrow">CONFESSION WALL</p>
+            <h1>Write Secret 😜</h1>
+            <p class="welcome__subtitle">Welcome back, friend. Share freely and stay anonymous.</p>
+          </div>
+          <div class="confess">
+            <h2>Post a confession</h2>
+            <form id="confessionForm" class="form">
+              <label class="form__label" for="confessionText">Your confession</label>
+              <textarea
+                id="confessionText"
+                name="confessionText"
+                rows="4"
+                placeholder="Type your confession..."
+                required
+              ></textarea>
+
+              <label class="form__label" for="secretCode">Secret code</label>
+              <input
+                id="secretCode"
+                name="secretCode"
+                type="password"
+                minlength="4"
+                placeholder="Minimum 4 characters"
+                required
+              />
+
+              <button type="submit" class="btn btn--dark">Post confession</button>
+              <p id="formMessage" class="form__message"></p>
+            </form>
+          </div>
+        </section>
+
+        <section class="trends">
+          <div class="trend-card">
+            <p class="trend-card__label">Campus Trends</p>
+            <h3>Most active hours</h3>
+            <div class="bar-row">
+              <span>9 PM</span>
+              <span class="bar"></span>
+              <span>12 AM</span>
+            </div>
+            <div class="bar-row">
+              <span>12 AM</span>
+              <span class="bar bar--soft"></span>
+              <span>2 AM</span>
+            </div>
+          </div>
+          <div class="trend-card">
+            <p class="trend-card__label">Weekly mood cloud</p>
+            <div class="pill-cloud">
+              <span>hopeful</span>
+              <span>overwhelmed</span>
+              <span>relieved</span>
+              <span>curious</span>
+              <span>tired</span>
+              <span>loved</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="wall">
+          <div class="wall__header">
+            <div>
+              <h2>Confessions</h2>
+              <p>React freely. Confessions are anonymous and sorted by newest first.</p>
+            </div>
+          </div>
+          <section id="confessionList" class="wall__grid"></section>
+        </section>
+      </main>
+    </div>
+
+    <template id="confessionTemplate">
+      <article class="card">
+        <div class="card__meta">
+          <span class="card__date"></span>
+        </div>
+        <p class="card__text"></p>
+        <div class="card__reactions">
+          <button class="reaction" data-type="like">👍 <span class="reaction__count"></span></button>
+          <button class="reaction" data-type="love">❤️ <span class="reaction__count"></span></button>
+          <button class="reaction" data-type="laugh">😂 <span class="reaction__count"></span></button>
+        </div>
+        <div class="card__actions">
+          <button class="btn btn--ghost btn--small" data-action="edit">Edit</button>
+          <button class="btn btn--ghost btn--small" data-action="delete">Delete</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
